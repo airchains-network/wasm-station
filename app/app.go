@@ -142,7 +142,7 @@ const appName = "StationWasmApp"
 // We pull these out so we can set them with LDFLAGS in the Makefile
 var (
 	NodeDir      = ".stationwasmd"
-	Bech32Prefix = "station-stationwasmd"
+	Bech32Prefix = "stationwasmd"
 )
 
 // These constants are derived from the above variables.
