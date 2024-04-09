@@ -1,9 +1,9 @@
 # Makefile for building and linting Go project
 
 # Basic project settings
-BINARY_NAME=stationwasmd
+BINARY_NAME=wasmstationd
 BUILD_DIR=./build
-SOURCE_DIR=./cmd/stationwasmd
+SOURCE_DIR=./cmd/wasmstationd
 
 # Go commands
 GO_BUILD=go build

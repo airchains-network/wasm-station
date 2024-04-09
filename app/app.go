@@ -137,19 +137,19 @@ import (
 	wasmtypes "github.com/airchains-network/station-wasm/x/wasm/types"
 )
 
-const appName = "StationWasmApp"
+const appName = "WasmStationApp"
 
 // We pull these out so we can set them with LDFLAGS in the Makefile
 var (
-	NodeDir      = ".stationwasmd"
-	Bech32Prefix = "stationwasmd"
+	NodeDir      = ".wasmstationd"
+	Bech32Prefix = "wasmstation"
 )
 
 // These constants are derived from the above variables.
 // These are the ones we will want to use in the code, based on
 // any overrides above
 var (
-	// DefaultNodeHome default home directories for stationwasmd
+	// DefaultNodeHome default home directories for WasmStationd
 	DefaultNodeHome = os.ExpandEnv("$HOME/") + NodeDir
 
 	// Bech32PrefixAccAddr defines the Bech32 prefix of an account's address
@@ -183,12 +183,12 @@ var maccPerms = map[string][]string{
 }
 
 var (
-	_ runtime.AppI            = (*StationWasmApp)(nil)
-	_ servertypes.Application = (*StationWasmApp)(nil)
+	_ runtime.AppI            = (*WasmStationApp)(nil)
+	_ servertypes.Application = (*WasmStationApp)(nil)
 )
 
-// StationWasmApp extended ABCI application
-type StationWasmApp struct {
+// WasmStationApp extended ABCI application
+type WasmStationApp struct {
 	*baseapp.BaseApp
 	legacyAmino       *codec.LegacyAmino
 	appCodec          codec.Codec
@@ -246,8 +246,8 @@ type StationWasmApp struct {
 	once         sync.Once
 }
 
-// NewStationWasmApp returns a reference to an initialized StationWasmApp.
-func NewStationWasmApp(
+// NewWasmStationApp returns a reference to an initialized WasmStationApp.
+func NewWasmStationApp(
 	logger log.Logger,
 	db dbm.DB,
 	traceStore io.Writer,
@@ -255,7 +255,7 @@ func NewStationWasmApp(
 	appOpts servertypes.AppOptions,
 	wasmOpts []wasmkeeper.Option,
 	baseAppOptions ...func(*baseapp.BaseApp),
-) *StationWasmApp {
+) *WasmStationApp {
 	interfaceRegistry, err := types.NewInterfaceRegistryWithOptions(types.InterfaceRegistryOptions{
 		ProtoFiles: proto.HybridResolver,
 		SigningOptions: signing.Options{
@@ -336,7 +336,7 @@ func NewStationWasmApp(
 		panic(err)
 	}
 
-	app := &StationWasmApp{
+	app := &WasmStationApp{
 		BaseApp:           bApp,
 		legacyAmino:       legacyAmino,
 		appCodec:          appCodec,
@@ -865,7 +865,7 @@ func NewStationWasmApp(
 
 	// must be before Loading version
 	// requires the snapshot store to be created and registered as a BaseAppOption
-	// see cmd/stationwasmd/root.go: 206 - 214 approx
+	// see cmd/WasmStationd/root.go: 206 - 214 approx
 	if manager := app.SnapshotManager(); manager != nil {
 		err := manager.RegisterExtensions(
 			wasmkeeper.NewWasmSnapshotter(app.CommitMultiStore(), &app.WasmKeeper),
@@ -924,7 +924,7 @@ func NewStationWasmApp(
 	return app
 }
 
-func (app *StationWasmApp) FinalizeBlock(req *abci.RequestFinalizeBlock) (*abci.ResponseFinalizeBlock, error) {
+func (app *WasmStationApp) FinalizeBlock(req *abci.RequestFinalizeBlock) (*abci.ResponseFinalizeBlock, error) {
 	// when skipping sdk 47 for sdk 50, the upgrade handler is called too late in BaseApp
 	// this is a hack to ensure that the migration is executed when needed and not panics
 	app.once.Do(func() {
@@ -945,7 +945,7 @@ func (app *StationWasmApp) FinalizeBlock(req *abci.RequestFinalizeBlock) (*abci.
 	return app.BaseApp.FinalizeBlock(req)
 }
 
-func (app *StationWasmApp) setAnteHandler(txConfig client.TxConfig, wasmConfig wasmtypes.WasmConfig, txCounterStoreKey *storetypes.KVStoreKey) {
+func (app *WasmStationApp) setAnteHandler(txConfig client.TxConfig, wasmConfig wasmtypes.WasmConfig, txCounterStoreKey *storetypes.KVStoreKey) {
 	anteHandler, err := NewAnteHandler(
 		HandlerOptions{
 			HandlerOptions: ante.HandlerOptions{
@@ -970,7 +970,7 @@ func (app *StationWasmApp) setAnteHandler(txConfig client.TxConfig, wasmConfig w
 	app.SetAnteHandler(anteHandler)
 }
 
-func (app *StationWasmApp) setPostHandler() {
+func (app *WasmStationApp) setPostHandler() {
 	postHandler, err := posthandler.NewPostHandler(
 		posthandler.HandlerOptions{},
 	)
@@ -982,29 +982,29 @@ func (app *StationWasmApp) setPostHandler() {
 }
 
 // Name returns the name of the App
-func (app *StationWasmApp) Name() string { return app.BaseApp.Name() }
+func (app *WasmStationApp) Name() string { return app.BaseApp.Name() }
 
 // PreBlocker application updates every pre block
-func (app *StationWasmApp) PreBlocker(ctx sdk.Context, _ *abci.RequestFinalizeBlock) (*sdk.ResponsePreBlock, error) {
+func (app *WasmStationApp) PreBlocker(ctx sdk.Context, _ *abci.RequestFinalizeBlock) (*sdk.ResponsePreBlock, error) {
 	return app.ModuleManager.PreBlock(ctx)
 }
 
 // BeginBlocker application updates every begin block
-func (app *StationWasmApp) BeginBlocker(ctx sdk.Context) (sdk.BeginBlock, error) {
+func (app *WasmStationApp) BeginBlocker(ctx sdk.Context) (sdk.BeginBlock, error) {
 	return app.ModuleManager.BeginBlock(ctx)
 }
 
 // EndBlocker application updates every end block
-func (app *StationWasmApp) EndBlocker(ctx sdk.Context) (sdk.EndBlock, error) {
+func (app *WasmStationApp) EndBlocker(ctx sdk.Context) (sdk.EndBlock, error) {
 	return app.ModuleManager.EndBlock(ctx)
 }
 
-func (a *StationWasmApp) Configurator() module.Configurator {
+func (a *WasmStationApp) Configurator() module.Configurator {
 	return a.configurator
 }
 
 // InitChainer application update at chain initialization
-func (app *StationWasmApp) InitChainer(ctx sdk.Context, req *abci.RequestInitChain) (*abci.ResponseInitChain, error) {
+func (app *WasmStationApp) InitChainer(ctx sdk.Context, req *abci.RequestInitChain) (*abci.ResponseInitChain, error) {
 	var genesisState GenesisState
 	if err := json.Unmarshal(req.AppStateBytes, &genesisState); err != nil {
 		panic(err)
@@ -1018,7 +1018,7 @@ func (app *StationWasmApp) InitChainer(ctx sdk.Context, req *abci.RequestInitCha
 }
 
 // LoadHeight loads a particular height
-func (app *StationWasmApp) LoadHeight(height int64) error {
+func (app *WasmStationApp) LoadHeight(height int64) error {
 	return app.LoadVersion(height)
 }
 
@@ -1026,7 +1026,7 @@ func (app *StationWasmApp) LoadHeight(height int64) error {
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *StationWasmApp) LegacyAmino() *codec.LegacyAmino {
+func (app *WasmStationApp) LegacyAmino() *codec.LegacyAmino {
 	return app.legacyAmino
 }
 
@@ -1034,22 +1034,22 @@ func (app *StationWasmApp) LegacyAmino() *codec.LegacyAmino {
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *StationWasmApp) AppCodec() codec.Codec {
+func (app *WasmStationApp) AppCodec() codec.Codec {
 	return app.appCodec
 }
 
-// InterfaceRegistry returns StationWasmApp's InterfaceRegistry
-func (app *StationWasmApp) InterfaceRegistry() types.InterfaceRegistry {
+// InterfaceRegistry returns WasmStationApp's InterfaceRegistry
+func (app *WasmStationApp) InterfaceRegistry() types.InterfaceRegistry {
 	return app.interfaceRegistry
 }
 
-// TxConfig returns StationWasmApp's TxConfig
-func (app *StationWasmApp) TxConfig() client.TxConfig {
+// TxConfig returns WasmStationApp's TxConfig
+func (app *WasmStationApp) TxConfig() client.TxConfig {
 	return app.txConfig
 }
 
 // AutoCliOpts returns the autocli options for the app.
-func (app *StationWasmApp) AutoCliOpts() autocli.AppOptions {
+func (app *WasmStationApp) AutoCliOpts() autocli.AppOptions {
 	modules := make(map[string]appmodule.AppModule, 0)
 	for _, m := range app.ModuleManager.Modules {
 		if moduleWithName, ok := m.(module.HasName); ok {
@@ -1070,19 +1070,19 @@ func (app *StationWasmApp) AutoCliOpts() autocli.AppOptions {
 }
 
 // DefaultGenesis returns a default genesis from the registered AppModuleBasic's.
-func (a *StationWasmApp) DefaultGenesis() map[string]json.RawMessage {
+func (a *WasmStationApp) DefaultGenesis() map[string]json.RawMessage {
 	return a.BasicModuleManager.DefaultGenesis(a.appCodec)
 }
 
 // GetKey returns the KVStoreKey for the provided store key.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *StationWasmApp) GetKey(storeKey string) *storetypes.KVStoreKey {
+func (app *WasmStationApp) GetKey(storeKey string) *storetypes.KVStoreKey {
 	return app.keys[storeKey]
 }
 
 // GetStoreKeys returns all the stored store keys.
-func (app *StationWasmApp) GetStoreKeys() []storetypes.StoreKey {
+func (app *WasmStationApp) GetStoreKeys() []storetypes.StoreKey {
 	keys := make([]storetypes.StoreKey, 0, len(app.keys))
 	for _, key := range app.keys {
 		keys = append(keys, key)
@@ -1096,33 +1096,33 @@ func (app *StationWasmApp) GetStoreKeys() []storetypes.StoreKey {
 // GetTKey returns the TransientStoreKey for the provided store key.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *StationWasmApp) GetTKey(storeKey string) *storetypes.TransientStoreKey {
+func (app *WasmStationApp) GetTKey(storeKey string) *storetypes.TransientStoreKey {
 	return app.tkeys[storeKey]
 }
 
 // GetMemKey returns the MemStoreKey for the provided mem key.
 //
 // NOTE: This is solely used for testing purposes.
-func (app *StationWasmApp) GetMemKey(storeKey string) *storetypes.MemoryStoreKey {
+func (app *WasmStationApp) GetMemKey(storeKey string) *storetypes.MemoryStoreKey {
 	return app.memKeys[storeKey]
 }
 
 // GetSubspace returns a param subspace for a given module name.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *StationWasmApp) GetSubspace(moduleName string) paramstypes.Subspace {
+func (app *WasmStationApp) GetSubspace(moduleName string) paramstypes.Subspace {
 	subspace, _ := app.ParamsKeeper.GetSubspace(moduleName)
 	return subspace
 }
 
 // SimulationManager implements the SimulationApp interface
-func (app *StationWasmApp) SimulationManager() *module.SimulationManager {
+func (app *WasmStationApp) SimulationManager() *module.SimulationManager {
 	return app.sm
 }
 
 // RegisterAPIRoutes registers all application module routes with the provided
 // API server.
-func (app *StationWasmApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig) {
+func (app *WasmStationApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig) {
 	clientCtx := apiSvr.ClientCtx
 	// Register new tx routes from grpc-gateway.
 	authtx.RegisterGRPCGatewayRoutes(clientCtx, apiSvr.GRPCGatewayRouter)
@@ -1143,12 +1143,12 @@ func (app *StationWasmApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig confi
 }
 
 // RegisterTxService implements the Application.RegisterTxService method.
-func (app *StationWasmApp) RegisterTxService(clientCtx client.Context) {
+func (app *WasmStationApp) RegisterTxService(clientCtx client.Context) {
 	authtx.RegisterTxService(app.BaseApp.GRPCQueryRouter(), clientCtx, app.BaseApp.Simulate, app.interfaceRegistry)
 }
 
 // RegisterTendermintService implements the Application.RegisterTendermintService method.
-func (app *StationWasmApp) RegisterTendermintService(clientCtx client.Context) {
+func (app *WasmStationApp) RegisterTendermintService(clientCtx client.Context) {
 	cmtApp := server.NewCometABCIWrapper(app)
 	cmtservice.RegisterTendermintService(
 		clientCtx,
@@ -1158,7 +1158,7 @@ func (app *StationWasmApp) RegisterTendermintService(clientCtx client.Context) {
 	)
 }
 
-func (app *StationWasmApp) RegisterNodeService(clientCtx client.Context, cfg config.Config) {
+func (app *WasmStationApp) RegisterNodeService(clientCtx client.Context, cfg config.Config) {
 	nodeservice.RegisterNodeService(clientCtx, app.GRPCQueryRouter(), cfg)
 }
 

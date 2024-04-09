@@ -52,12 +52,12 @@ Example to submit a parameter change gov proposal:
 
 - First create a draft proposal using the interactive CLI
 ```sh
-stationwasmd tx gov draft-proposal
+WasmStationd tx gov draft-proposal
 ```
 
 - Submit the proposal
 ```sh
-stationwasmd tx gov submit-proposal <proposal-json-file> --from validator --chain-id=testing -b block
+WasmStationd tx gov submit-proposal <proposal-json-file> --from validator --chain-id=testing -b block
 ```
 #### Content examples
 * Disable wasm code uploads
@@ -172,7 +172,7 @@ stationwasmd tx gov submit-proposal <proposal-json-file> --from validator --chai
 ## CLI
 
 ```shell script
-  stationwasmd tx wasm submit-proposal [command]
+  WasmStationd tx wasm submit-proposal [command]
 
 Available Commands:
   add-code-upload-params-addresses    Submit an add code upload params addresses proposal to add addresses to code upload config params

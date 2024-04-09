@@ -33,11 +33,11 @@ import (
 	wasmtypes "github.com/airchains-network/station-wasm/x/wasm/types"
 )
 
-func setup(db dbm.DB, withGenesis bool, invCheckPeriod uint, opts ...wasmkeeper.Option) (*app.StationWasmApp, app.GenesisState) { //nolint:unparam
+func setup(db dbm.DB, withGenesis bool, invCheckPeriod uint, opts ...wasmkeeper.Option) (*app.WasmStationApp, app.GenesisState) { //nolint:unparam
 
 	logLevel := log.LevelOption(zerolog.InfoLevel)
 
-	wasmApp := app.NewStationWasmApp(log.NewLogger(os.Stdout, logLevel), db, nil, true, simtestutil.EmptyAppOptions{}, nil)
+	wasmApp := app.NewWasmStationApp(log.NewLogger(os.Stdout, logLevel), db, nil, true, simtestutil.EmptyAppOptions{}, nil)
 
 	if withGenesis {
 		return wasmApp, wasmApp.DefaultGenesis()
@@ -45,9 +45,9 @@ func setup(db dbm.DB, withGenesis bool, invCheckPeriod uint, opts ...wasmkeeper.
 	return wasmApp, app.GenesisState{}
 }
 
-// SetupWithGenesisAccountsAndValSet initializes a new StationWasmApp with the provided genesis
+// SetupWithGenesisAccountsAndValSet initializes a new WasmStationApp with the provided genesis
 // accounts and possible balances.
-func SetupWithGenesisAccountsAndValSet(b testing.TB, db dbm.DB, genAccs []authtypes.GenesisAccount, balances ...banktypes.Balance) *app.StationWasmApp {
+func SetupWithGenesisAccountsAndValSet(b testing.TB, db dbm.DB, genAccs []authtypes.GenesisAccount, balances ...banktypes.Balance) *app.WasmStationApp {
 	wasmApp, genesisState := setup(db, true, 0)
 	authGenesis := authtypes.NewGenesisState(authtypes.DefaultParams(), genAccs)
 	appCodec := wasmApp.AppCodec()
@@ -128,7 +128,7 @@ func SetupWithGenesisAccountsAndValSet(b testing.TB, db dbm.DB, genAccs []authty
 }
 
 type AppInfo struct {
-	App          *app.StationWasmApp
+	App          *app.WasmStationApp
 	MinterKey    *secp256k1.PrivKey
 	MinterAddr   sdk.AccAddress
 	ContractAddr string

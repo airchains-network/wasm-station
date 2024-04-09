@@ -9,37 +9,38 @@ CHAINID=staion-1
 MONIKER=noooblien
 KEYRING="test"
 cd ../  ;
+rm -f  ./build
 make build
 # Remove the existing data
-rm -rf ./private/.station-wasmd
+rm -rf ~/.wasmstationd
 
 # Initialize the node
-./build/stationwasmd init $MONIKER \
+./build/wasmstationd init $MONIKER \
     --chain-id $CHAINID
 
 #Print the genesis file to verify everything worked
 cat  ~/.station-wasmd/config/genesis.json
 
 # Prepare your account
-./build/stationwasmd keys add $KEY \
+./build/wasmstationd keys add $KEY \
     --keyring-backend $KEYRING
 
 # Add the account to genesis
-grep bond_denom ./private/.station-wasmd/config/genesis.json
+grep bond_denom ~/.stationwasmd/config/genesis.json
 
 # Add the account balance to genesis
 
-./build/stationwasmd genesis add-genesis-account $KEY 100000000stake \
+./build/wasmstationd genesis add-genesis-account $KEY 100000000stake \
     --keyring-backend $KEYRING
 
 # Create a gentx
 
-./build/stationwasmd genesis gentx $KEY 70000000stake \
+./build/wasmstationd genesis gentx $KEY 70000000stake \
     --keyring-backend $KEYRING \
     --chain-id $CHAINID
 
 # Collect the gentxs
-./build/stationwasmd genesis collect-gentxs \
+./build/wasmstationd genesis collect-gentxs \
 
 
 

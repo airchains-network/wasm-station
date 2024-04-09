@@ -120,7 +120,7 @@ type PacketAck struct {
 // ChainAppFactory abstract factory method that usually implemented by app.SetupWithGenesisValSet
 type ChainAppFactory func(t *testing.T, valSet *cmttypes.ValidatorSet, genAccs []authtypes.GenesisAccount, chainID string, opts []wasmkeeper.Option, balances ...banktypes.Balance) ChainApp
 
-// DefaultWasmAppFactory instantiates and sets up the default stationwasmd app
+// DefaultWasmAppFactory instantiates and sets up the default WasmStationd app
 func DefaultWasmAppFactory(t *testing.T, valSet *cmttypes.ValidatorSet, genAccs []authtypes.GenesisAccount, chainID string, opts []wasmkeeper.Option, balances ...banktypes.Balance) ChainApp {
 	return app.SetupWithGenesisValSet(t, valSet, genAccs, chainID, opts, balances...)
 }

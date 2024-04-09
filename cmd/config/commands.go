@@ -200,7 +200,7 @@ func newApp(
 		wasmOpts = append(wasmOpts, wasmkeeper.WithVMCacheMetrics(prometheus.DefaultRegisterer))
 	}
 
-	return app.NewStationWasmApp(
+	return app.NewWasmStationApp(
 		logger, db, traceStore, true,
 		appOpts,
 		wasmOpts,
@@ -219,7 +219,7 @@ func appExport(
 	appOpts servertypes.AppOptions,
 	modulesToExport []string,
 ) (servertypes.ExportedApp, error) {
-	var wasmApp *app.StationWasmApp
+	var wasmApp *app.WasmStationApp
 	// this check is necessary as we use the flag in x/upgrade.
 	// we can exit more gracefully by checking the flag here.
 	homePath, ok := appOpts.Get(flags.FlagHome).(string)
@@ -237,7 +237,7 @@ func appExport(
 	appOpts = viperAppOpts
 
 	var emptyWasmOpts []wasmkeeper.Option
-	wasmApp = app.NewStationWasmApp(
+	wasmApp = app.NewWasmStationApp(
 		logger,
 		db,
 		traceStore,
@@ -256,7 +256,7 @@ func appExport(
 }
 
 var TempDir = func() string {
-	dir, err := os.MkdirTemp("", "stationwasmd")
+	dir, err := os.MkdirTemp("", "WasmStationd")
 	if err != nil {
 		panic("failed to create temp dir: " + err.Error())
 	}

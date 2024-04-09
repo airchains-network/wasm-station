@@ -75,7 +75,7 @@ type WasmVMResponseHandler interface {
 	) ([]byte, error)
 }
 
-// list of account types that are accepted for wasm contracts. Chains importing stationwasmd
+// list of account types that are accepted for wasm contracts. Chains importing WasmStationd
 // can overwrite this list with the WithAcceptedAccountTypesOnContractInstantiation option.
 var defaultAcceptedAccountTypes = map[reflect.Type]struct{}{
 	reflect.TypeOf(&authtypes.BaseAccount{}): {},
@@ -279,7 +279,7 @@ func (k Keeper) instantiate(
 			// keep account and balance as it is
 			k.Logger(sdkCtx).Info("instantiate contract with existing account", "address", contractAddress.String())
 		} else {
-			// consider an account in the stationwasmd namespace spam and overwrite it.
+			// consider an account in the WasmStationd namespace spam and overwrite it.
 			k.Logger(sdkCtx).Info("pruning existing account for contract instantiation", "address", contractAddress.String())
 			contractAccount := k.accountKeeper.NewAccountWithAddress(sdkCtx, contractAddress)
 			k.accountKeeper.SetAccount(sdkCtx, contractAccount)

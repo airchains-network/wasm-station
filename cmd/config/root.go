@@ -26,7 +26,7 @@ import (
 	wasmtypes "github.com/airchains-network/station-wasm/x/wasm/types"
 )
 
-// NewRootCmd creates a new root command for stationwasmd. It is called once in the
+// NewRootCmd creates a new root command for WasmStationd. It is called once in the
 // main function.
 func NewRootCmd() *cobra.Command {
 	cfg := sdk.GetConfig()
@@ -37,7 +37,7 @@ func NewRootCmd() *cobra.Command {
 	cfg.Seal()
 	// we "pre"-instantiate the application for getting the injected/configured encoding configuration
 	// note, this is not necessary when using app wiring, as depinject can be directly used (see root_v2.go)
-	tempApp := app.NewStationWasmApp(log.NewNopLogger(), dbm.NewMemDB(), nil, false, simtestutil.NewAppOptionsWithFlagHome(TempDir()), []wasmkeeper.Option{})
+	tempApp := app.NewWasmStationApp(log.NewNopLogger(), dbm.NewMemDB(), nil, false, simtestutil.NewAppOptionsWithFlagHome(TempDir()), []wasmkeeper.Option{})
 	encodingConfig := params.EncodingConfig{
 		InterfaceRegistry: tempApp.InterfaceRegistry(),
 		Codec:             tempApp.AppCodec(),
@@ -53,7 +53,7 @@ func NewRootCmd() *cobra.Command {
 		WithInput(os.Stdin).
 		WithAccountRetriever(authtypes.AccountRetriever{}).
 		WithHomeDir(app.DefaultNodeHome).
-		WithViper("") // In stationwasmd, we don't use any prefix for env variables.
+		WithViper("") // In WasmStationd, we don't use any prefix for env variables.
 
 	rootCmd := &cobra.Command{
 		Use:           version.AppName,

@@ -29,7 +29,7 @@ import (
 var Upgrades = []upgrades.Upgrade{v050.Upgrade}
 
 // RegisterUpgradeHandlers registers the chain upgrade handlers
-func (app *StationWasmApp) RegisterUpgradeHandlers() {
+func (app *WasmStationApp) RegisterUpgradeHandlers() {
 	setupLegacyKeyTables(&app.ParamsKeeper)
 	if len(Upgrades) == 0 {
 		// always have a unique upgrade registered for the current version to test in system tests
