@@ -5,7 +5,7 @@ command -v jq > /dev/null 2>&1 || { echo >&2 "jq not installed. More info: https
 
 
 KEY=node
-CHAINID=staion-1
+CHAINID=station-1
 MONIKER=noooblien
 KEYRING="test"
 cd ../  ;
