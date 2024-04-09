@@ -1,4 +1,4 @@
-# EVM station
+# Wasm station
 
 ## Introduction
 
