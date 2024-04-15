@@ -8,8 +8,7 @@ KEY=node
 CHAINID=station-1
 MONIKER=noooblien
 KEYRING="test"
-cd ../  ;
-rm -f  ./build
+rm -rf  ./build
 make build
 # Remove the existing data
 rm -rf ~/.wasmstationd
