@@ -8,7 +8,7 @@ import "cosmos/base/query/v1beta1/pagination.proto";
 import "amino/amino.proto";
 import "cosmos_proto/cosmos.proto";
 
-option go_package = "github.com/CosmWasm/wasmd/x/wasm/types";
+option go_package = "github.com/airchains-network/wasm-station/x/wasm/types";
 option (gogoproto.goproto_getters_all) = false;
 option (gogoproto.equal_all) = false;
 
