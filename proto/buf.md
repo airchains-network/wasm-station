@@ -1,6 +1,6 @@
 # Protobufs
 
-This is the public protocol buffers API for [Wasmd](https://github.com/CosmWasm/wasmd).
+This is the public protocol buffers API for [Wasmd](https://github.com/airchains-network/wasm-station).
 
 ## Download
 
