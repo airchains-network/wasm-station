@@ -39,11 +39,4 @@ grep bond_denom ~/.stationwasmd/config/genesis.json
     --chain-id $CHAINID
 
 # Collect the gentxs
-./build/wasmstationd genesis collect-gentxs \
-
-
-
-
-
-
-
+./build/wasmstationd genesis collect-gentxs
