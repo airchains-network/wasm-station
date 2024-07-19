@@ -16,10 +16,10 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdkerrors "github.com/airchains-network/cosmos-sdk/types/errors"
+	banktypes "github.com/airchains-network/cosmos-sdk/x/bank/types"
+	stakingtypes "github.com/airchains-network/cosmos-sdk/x/staking/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/testdata"
 	"github.com/airchains-network/station-wasm/x/wasm/types"

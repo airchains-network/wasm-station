@@ -100,7 +100,7 @@ message MaxFundsLimit {
   repeated cosmos.base.v1beta1.Coin amounts = 1 [
     (gogoproto.nullable) = false,
     (amino.dont_omitempty) = true,
-    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"
+    (gogoproto.castrepeated) = "github.com/airchains-network/cosmos-sdk/types.Coins"
   ];
 }
 
@@ -118,7 +118,7 @@ message CombinedLimit {
   repeated cosmos.base.v1beta1.Coin amounts = 2 [
     (gogoproto.nullable) = false,
     (amino.dont_omitempty) = true,
-    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"
+    (gogoproto.castrepeated) = "github.com/airchains-network/cosmos-sdk/types.Coins"
   ];
 }
 

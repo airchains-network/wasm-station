@@ -10,9 +10,9 @@ import (
 
 	"cosmossdk.io/log"
 
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/msgservice"
+	simtestutil "github.com/airchains-network/cosmos-sdk/testutil/sims"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	"github.com/airchains-network/cosmos-sdk/types/msgservice"
 
 	wasmkeeper "github.com/airchains-network/station-wasm/x/wasm/keeper"
 )

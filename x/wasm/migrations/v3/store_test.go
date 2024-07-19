@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/address"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	"github.com/airchains-network/cosmos-sdk/types/address"
+	moduletestutil "github.com/airchains-network/cosmos-sdk/types/module/testutil"
 
 	"github.com/airchains-network/station-wasm/x/wasm"
 	"github.com/airchains-network/station-wasm/x/wasm/keeper"

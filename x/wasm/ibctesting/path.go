@@ -6,7 +6,7 @@ import (
 
 	channeltypes "github.com/cosmos/ibc-go/v8/modules/core/04-channel/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
 )
 
 // Path contains two endpoints representing two chains connected over IBC

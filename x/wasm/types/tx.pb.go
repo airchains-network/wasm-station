@@ -10,11 +10,11 @@ import (
 	math "math"
 	math_bits "math/bits"
 
+	github_com_cosmos_cosmos_sdk_types "github.com/airchains-network/cosmos-sdk/types"
+	types "github.com/airchains-network/cosmos-sdk/types"
+	_ "github.com/airchains-network/cosmos-sdk/types/msgservice"
+	_ "github.com/airchains-network/cosmos-sdk/types/tx/amino"
 	_ "github.com/cosmos/cosmos-proto"
-	github_com_cosmos_cosmos_sdk_types "github.com/cosmos/cosmos-sdk/types"
-	types "github.com/cosmos/cosmos-sdk/types"
-	_ "github.com/cosmos/cosmos-sdk/types/msgservice"
-	_ "github.com/cosmos/cosmos-sdk/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	grpc1 "github.com/cosmos/gogoproto/grpc"
 	proto "github.com/cosmos/gogoproto/proto"
@@ -145,7 +145,7 @@ type MsgInstantiateContract struct {
 	// Msg json encoded message to be passed to the contract on instantiation
 	Msg RawContractMessage `protobuf:"bytes,5,opt,name=msg,proto3,casttype=RawContractMessage" json:"msg,omitempty"`
 	// Funds coins that are transferred to the contract on instantiation
-	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,6,rep,name=funds,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"funds"`
+	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,6,rep,name=funds,proto3,castrepeated=github.com/airchains-network/cosmos-sdk/types.Coins" json:"funds"`
 }
 
 func (m *MsgInstantiateContract) Reset()         { *m = MsgInstantiateContract{} }
@@ -246,7 +246,7 @@ type MsgInstantiateContract2 struct {
 	// Msg json encoded message to be passed to the contract on instantiation
 	Msg RawContractMessage `protobuf:"bytes,5,opt,name=msg,proto3,casttype=RawContractMessage" json:"msg,omitempty"`
 	// Funds coins that are transferred to the contract on instantiation
-	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,6,rep,name=funds,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"funds"`
+	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,6,rep,name=funds,proto3,castrepeated=github.com/airchains-network/cosmos-sdk/types.Coins" json:"funds"`
 	// Salt is an arbitrary value provided by the sender. Size can be 1 to 64.
 	Salt []byte `protobuf:"bytes,7,opt,name=salt,proto3" json:"salt,omitempty"`
 	// FixMsg include the msg value into the hash for the predictable address.
@@ -347,7 +347,7 @@ type MsgExecuteContract struct {
 	// Msg json encoded message to be passed to the contract
 	Msg RawContractMessage `protobuf:"bytes,3,opt,name=msg,proto3,casttype=RawContractMessage" json:"msg,omitempty"`
 	// Funds coins that are transferred to the contract on execution
-	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,5,rep,name=funds,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"funds"`
+	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,5,rep,name=funds,proto3,castrepeated=github.com/airchains-network/cosmos-sdk/types.Coins" json:"funds"`
 }
 
 func (m *MsgExecuteContract) Reset()         { *m = MsgExecuteContract{} }
@@ -1189,7 +1189,7 @@ type MsgStoreAndInstantiateContract struct {
 	Msg RawContractMessage `protobuf:"bytes,8,opt,name=msg,proto3,casttype=RawContractMessage" json:"msg,omitempty"`
 	// Funds coins that are transferred from the authority account to the contract
 	// on instantiation
-	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,9,rep,name=funds,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"funds"`
+	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,9,rep,name=funds,proto3,castrepeated=github.com/airchains-network/cosmos-sdk/types.Coins" json:"funds"`
 	// Source is the URL where the code is hosted
 	Source string `protobuf:"bytes,10,opt,name=source,proto3" json:"source,omitempty"`
 	// Builder is the docker image used to build the code deterministically, used

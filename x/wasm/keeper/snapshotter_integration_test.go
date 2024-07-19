@@ -14,11 +14,11 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+	cryptocodec "github.com/airchains-network/cosmos-sdk/crypto/codec"
+	"github.com/airchains-network/cosmos-sdk/crypto/keys/ed25519"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	authtypes "github.com/airchains-network/cosmos-sdk/x/auth/types"
+	banktypes "github.com/airchains-network/cosmos-sdk/x/bank/types"
 
 	"github.com/airchains-network/station-wasm/app"
 	"github.com/airchains-network/station-wasm/x/wasm/keeper"

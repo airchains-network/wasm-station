@@ -22,11 +22,11 @@ build_tags += $(BUILD_TAGS)
 build_tags := $(strip $(build_tags))
 
 # Linker flags
-ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=evm-station \
-          -X github.com/cosmos/cosmos-sdk/version.AppName=$(BINARY_NAME) \
-          -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
-          -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
-          -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags)" \
+ldflags = -X github.com/airchains-network/cosmos-sdk/version.Name=evm-station \
+          -X github.com/airchains-network/cosmos-sdk/version.AppName=$(BINARY_NAME) \
+          -X github.com/airchains-network/cosmos-sdk/version.Version=$(VERSION) \
+          -X github.com/airchains-network/cosmos-sdk/version.Commit=$(COMMIT) \
+          -X "github.com/airchains-network/cosmos-sdk/version.BuildTags=$(build_tags)" \
           -X github.com/tendermint/tendermint/version.TMCoreSemVer=$(TMVERSION)
 
 # Linter settings

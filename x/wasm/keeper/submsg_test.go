@@ -15,8 +15,8 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	storetypes "cosmossdk.io/store/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdkerrors "github.com/airchains-network/cosmos-sdk/types/errors"
 
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/testdata"
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/wasmtesting"

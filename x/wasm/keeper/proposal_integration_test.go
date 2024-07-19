@@ -12,11 +12,11 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	govkeeper "github.com/cosmos/cosmos-sdk/x/gov/keeper"
-	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
-	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	"github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	govkeeper "github.com/airchains-network/cosmos-sdk/x/gov/keeper"
+	govtypes "github.com/airchains-network/cosmos-sdk/x/gov/types"
+	v1 "github.com/airchains-network/cosmos-sdk/x/gov/types/v1"
+	"github.com/airchains-network/cosmos-sdk/x/gov/types/v1beta1"
 
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/testdata"
 	"github.com/airchains-network/station-wasm/x/wasm/types"

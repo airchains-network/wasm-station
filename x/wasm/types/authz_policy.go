@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/cosmos/cosmos-sdk/types"
+	"github.com/airchains-network/cosmos-sdk/types"
 )
 
 // ChainAccessConfigs chain settings

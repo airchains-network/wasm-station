@@ -14,8 +14,8 @@ import (
 	storemetrics "cosmossdk.io/store/metrics"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/runtime"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/airchains-network/cosmos-sdk/runtime"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/keeper"
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/wasmtesting"

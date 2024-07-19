@@ -21,8 +21,6 @@ The project requires:
     go mod tidy;
 ```
 
-
-
 ## Running the project
 
 - To run the project, execute the following command:

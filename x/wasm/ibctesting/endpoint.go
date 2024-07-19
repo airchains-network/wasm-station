@@ -15,7 +15,7 @@ import (
 	ibctesting "github.com/cosmos/ibc-go/v8/testing"
 	"github.com/stretchr/testify/require"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
+	"github.com/airchains-network/cosmos-sdk/baseapp"
 )
 
 // Endpoint is a which represents a channel endpoint and its associated

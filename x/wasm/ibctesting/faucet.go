@@ -5,8 +5,8 @@ import (
 
 	"cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	banktypes "github.com/airchains-network/cosmos-sdk/x/bank/types"
 )
 
 // Fund an address with the given amount in default denom

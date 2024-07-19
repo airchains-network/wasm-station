@@ -7,9 +7,9 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdkerrors "github.com/airchains-network/cosmos-sdk/types/errors"
+	"github.com/airchains-network/cosmos-sdk/x/gov/types/v1beta1"
 
 	"github.com/airchains-network/station-wasm/x/wasm/types"
 )

@@ -7,14 +7,14 @@ import (
 	sdkmath "cosmossdk.io/math"
 	storetypes "cosmossdk.io/store/types"
 
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	sdkerrors "github.com/airchains-network/cosmos-sdk/types/errors"
 )
 
 const (
 	// DefaultGasMultiplier is how many CosmWasm gas points = 1 Cosmos SDK gas point.
 	//
 	// CosmWasm gas strategy is documented in https://github.com/CosmWasm/cosmwasm/blob/v1.0.0-beta/docs/GAS.md.
-	// Cosmos SDK reference costs can be found here: https://github.com/cosmos/cosmos-sdk/blob/v0.42.10/store/types/gas.go#L198-L209.
+	// Cosmos SDK reference costs can be found here: https://github.com/airchains-network/cosmos-sdk/blob/v0.42.10/store/types/gas.go#L198-L209.
 	//
 	// The original multiplier of 100 up to CosmWasm 0.16 was based on
 	//     "A write at ~3000 gas and ~200us = 10 gas per us (microsecond) cpu/io
@@ -100,7 +100,7 @@ type WasmGasRegisterConfig struct {
 	// UncompressCost costs per byte to unpack a contract
 	UncompressCost wasmvmtypes.UFraction
 	// GasMultiplier is how many cosmwasm gas points = 1 sdk gas point
-	// SDK reference costs can be found here: https://github.com/cosmos/cosmos-sdk/blob/02c6c9fafd58da88550ab4d7d494724a477c8a68/store/types/gas.go#L153-L164
+	// SDK reference costs can be found here: https://github.com/airchains-network/cosmos-sdk/blob/02c6c9fafd58da88550ab4d7d494724a477c8a68/store/types/gas.go#L153-L164
 	GasMultiplier storetypes.Gas
 	// EventPerAttributeCost is how much SDK gas is charged *per byte* for attribute data in events.
 	// This is used with len(key) + len(value)

@@ -7,7 +7,7 @@ import (
 	capabilitytypes "github.com/cosmos/ibc-go/modules/capability/types"
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
 )
 
 // ViewKeeper provides read only operations

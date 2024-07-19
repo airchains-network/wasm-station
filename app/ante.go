@@ -10,8 +10,8 @@ import (
 	circuitante "cosmossdk.io/x/circuit/ante"
 	circuitkeeper "cosmossdk.io/x/circuit/keeper"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/auth/ante"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	"github.com/airchains-network/cosmos-sdk/x/auth/ante"
 
 	wasmkeeper "github.com/airchains-network/station-wasm/x/wasm/keeper"
 	wasmTypes "github.com/airchains-network/station-wasm/x/wasm/types"

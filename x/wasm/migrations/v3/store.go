@@ -7,9 +7,9 @@ import (
 	corestoretypes "cosmossdk.io/core/store"
 	"cosmossdk.io/store/prefix"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/runtime"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/airchains-network/cosmos-sdk/codec"
+	"github.com/airchains-network/cosmos-sdk/runtime"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/types"
 )

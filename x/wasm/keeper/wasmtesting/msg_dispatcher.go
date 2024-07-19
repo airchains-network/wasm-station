@@ -3,7 +3,7 @@ package wasmtesting
 import (
 	wasmvmtypes "github.com/CosmWasm/wasmvm/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
 )
 
 type MockMsgDispatcher struct {

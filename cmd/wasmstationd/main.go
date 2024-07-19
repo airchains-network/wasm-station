@@ -6,7 +6,7 @@ import (
 
 	"cosmossdk.io/log"
 
-	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
+	svrcmd "github.com/airchains-network/cosmos-sdk/server/cmd"
 
 	"github.com/airchains-network/station-wasm/app"
 )

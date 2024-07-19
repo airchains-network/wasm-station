@@ -6,8 +6,8 @@ import (
 	storetypes "cosmossdk.io/store/types"
 	upgradetypes "cosmossdk.io/x/upgrade/types"
 
+	"github.com/airchains-network/cosmos-sdk/types/module"
 	"github.com/airchains-network/station-wasm/app/upgrades"
-	"github.com/cosmos/cosmos-sdk/types/module"
 )
 
 // NewUpgrade constructor

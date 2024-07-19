@@ -11,7 +11,7 @@ import (
 	"cosmossdk.io/store"
 	storemetrics "cosmossdk.io/store/metrics"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/types"
 )

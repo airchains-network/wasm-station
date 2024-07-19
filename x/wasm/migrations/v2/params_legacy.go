@@ -13,8 +13,8 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	paramtypes "github.com/airchains-network/cosmos-sdk/x/params/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/types"
 )

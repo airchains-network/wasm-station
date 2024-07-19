@@ -9,9 +9,9 @@ import (
 
 	upgradetypes "cosmossdk.io/x/upgrade/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/address"
-	"github.com/cosmos/cosmos-sdk/types/module"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	"github.com/airchains-network/cosmos-sdk/types/address"
+	"github.com/airchains-network/cosmos-sdk/types/module"
 
 	"github.com/airchains-network/station-wasm/app"
 	v2 "github.com/airchains-network/station-wasm/x/wasm/migrations/v2"

@@ -11,13 +11,13 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
-	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
-	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+	"github.com/airchains-network/cosmos-sdk/codec"
+	codectypes "github.com/airchains-network/cosmos-sdk/codec/types"
+	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdkerrors "github.com/airchains-network/cosmos-sdk/types/errors"
+	authkeeper "github.com/airchains-network/cosmos-sdk/x/auth/keeper"
+	bankkeeper "github.com/airchains-network/cosmos-sdk/x/bank/keeper"
+	banktypes "github.com/airchains-network/cosmos-sdk/x/bank/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/testdata"
 	"github.com/airchains-network/station-wasm/x/wasm/types"
