@@ -9,11 +9,11 @@ import (
 	math "math"
 	math_bits "math/bits"
 
-	types "github.com/airchains-network/cosmos-sdk/codec/types"
-	github_com_cosmos_cosmos_sdk_types "github.com/airchains-network/cosmos-sdk/types"
-	types1 "github.com/airchains-network/cosmos-sdk/types"
-	_ "github.com/airchains-network/cosmos-sdk/types/tx/amino"
 	_ "github.com/cosmos/cosmos-proto"
+	types "github.com/cosmos/cosmos-sdk/codec/types"
+	github_com_cosmos_cosmos_sdk_types "github.com/cosmos/cosmos-sdk/types"
+	types1 "github.com/cosmos/cosmos-sdk/types"
+	_ "github.com/cosmos/cosmos-sdk/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 )
@@ -316,7 +316,7 @@ var xxx_messageInfo_MaxCallsLimit proto.InternalMessageInfo
 // Since: WasmStationd 0.30
 type MaxFundsLimit struct {
 	// Amounts is the maximal amount of tokens transferable to the contract.
-	Amounts github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=amounts,proto3,castrepeated=github.com/airchains-network/cosmos-sdk/types.Coins" json:"amounts"`
+	Amounts github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=amounts,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"amounts"`
 }
 
 func (m *MaxFundsLimit) Reset()         { *m = MaxFundsLimit{} }
@@ -364,7 +364,7 @@ type CombinedLimit struct {
 	// Remaining number that is decremented on each execution
 	CallsRemaining uint64 `protobuf:"varint,1,opt,name=calls_remaining,json=callsRemaining,proto3" json:"calls_remaining,omitempty"`
 	// Amounts is the maximal amount of tokens transferable to the contract.
-	Amounts github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=amounts,proto3,castrepeated=github.com/airchains-network/cosmos-sdk/types.Coins" json:"amounts"`
+	Amounts github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=amounts,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"amounts"`
 }
 
 func (m *CombinedLimit) Reset()         { *m = CombinedLimit{} }

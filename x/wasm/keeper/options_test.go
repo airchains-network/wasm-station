@@ -11,12 +11,12 @@ import (
 
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/airchains-network/cosmos-sdk/runtime"
-	authkeeper "github.com/airchains-network/cosmos-sdk/x/auth/keeper"
-	authtypes "github.com/airchains-network/cosmos-sdk/x/auth/types"
-	vestingtypes "github.com/airchains-network/cosmos-sdk/x/auth/vesting/types"
-	bankkeeper "github.com/airchains-network/cosmos-sdk/x/bank/keeper"
-	stakingkeeper "github.com/airchains-network/cosmos-sdk/x/staking/keeper"
+	"github.com/cosmos/cosmos-sdk/runtime"
+	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
+	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
+	vestingtypes "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
+	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
+	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/wasmtesting"
 	"github.com/airchains-network/station-wasm/x/wasm/types"

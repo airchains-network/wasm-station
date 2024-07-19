@@ -22,13 +22,13 @@ import (
 	"cosmossdk.io/store/prefix"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/airchains-network/cosmos-sdk/codec"
-	"github.com/airchains-network/cosmos-sdk/runtime"
-	"github.com/airchains-network/cosmos-sdk/telemetry"
-	sdk "github.com/airchains-network/cosmos-sdk/types"
-	sdkerrors "github.com/airchains-network/cosmos-sdk/types/errors"
-	authtypes "github.com/airchains-network/cosmos-sdk/x/auth/types"
-	vestingexported "github.com/airchains-network/cosmos-sdk/x/auth/vesting/exported"
+	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/cosmos-sdk/runtime"
+	"github.com/cosmos/cosmos-sdk/telemetry"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
+	vestingexported "github.com/cosmos/cosmos-sdk/x/auth/vesting/exported"
 
 	"github.com/airchains-network/station-wasm/x/wasm/ioutils"
 	"github.com/airchains-network/station-wasm/x/wasm/types"
@@ -1238,7 +1238,7 @@ func (k Keeper) QueryGasLimit() storetypes.Gas {
 }
 
 // BankCoinTransferrer replicates the cosmos-sdk behavior as in
-// https://github.com/airchains-network/cosmos-sdk/blob/v0.41.4/x/bank/keeper/msg_server.go#L26
+// https://github.com/cosmos/cosmos-sdk/blob/v0.41.4/x/bank/keeper/msg_server.go#L26
 type BankCoinTransferrer struct {
 	keeper types.BankKeeper
 }

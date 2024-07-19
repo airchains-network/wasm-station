@@ -14,14 +14,14 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/airchains-network/cosmos-sdk/baseapp"
-	"github.com/airchains-network/cosmos-sdk/codec"
-	sdk "github.com/airchains-network/cosmos-sdk/types"
-	sdkerrors "github.com/airchains-network/cosmos-sdk/types/errors"
-	"github.com/airchains-network/cosmos-sdk/types/query"
-	banktypes "github.com/airchains-network/cosmos-sdk/x/bank/types"
-	distributiontypes "github.com/airchains-network/cosmos-sdk/x/distribution/types"
-	stakingtypes "github.com/airchains-network/cosmos-sdk/x/staking/types"
+	"github.com/cosmos/cosmos-sdk/baseapp"
+	"github.com/cosmos/cosmos-sdk/codec"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	"github.com/cosmos/cosmos-sdk/types/query"
+	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
+	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/types"
 )
@@ -479,7 +479,7 @@ func sdkToDelegations(ctx sdk.Context, keeper types.StakingKeeper, delegations [
 		}
 
 		// shares to amount logic comes from here:
-		// https://github.com/airchains-network/cosmos-sdk/blob/v0.38.3/x/staking/keeper/querier.go#L404
+		// https://github.com/cosmos/cosmos-sdk/blob/v0.38.3/x/staking/keeper/querier.go#L404
 		val, err := keeper.GetValidator(ctx, valAddr)
 		if err != nil { // is stakingtypes.ErrNoValidatorFound
 			return nil, errorsmod.Wrap(err, "can't load validator for delegation")
@@ -550,7 +550,7 @@ func sdkToFullDelegation(ctx sdk.Context, keeper types.StakingKeeper, distKeeper
 }
 
 // FIXME: simplify this enormously when
-// https://github.com/airchains-network/cosmos-sdk/issues/7466 is merged
+// https://github.com/cosmos/cosmos-sdk/issues/7466 is merged
 func getAccumulatedRewards(ctx sdk.Context, distKeeper types.DistributionKeeper, delegation stakingtypes.Delegation) ([]wasmvmtypes.Coin, error) {
 	// Try to get *delegator* reward info!
 	params := distributiontypes.QueryDelegationRewardsRequest{

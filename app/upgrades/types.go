@@ -9,11 +9,11 @@ import (
 	storetypes "cosmossdk.io/store/types"
 	upgradetypes "cosmossdk.io/x/upgrade/types"
 
-	"github.com/airchains-network/cosmos-sdk/codec"
-	"github.com/airchains-network/cosmos-sdk/types/module"
-	authkeeper "github.com/airchains-network/cosmos-sdk/x/auth/keeper"
-	consensusparamkeeper "github.com/airchains-network/cosmos-sdk/x/consensus/keeper"
-	paramskeeper "github.com/airchains-network/cosmos-sdk/x/params/keeper"
+	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/cosmos-sdk/types/module"
+	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
+	consensusparamkeeper "github.com/cosmos/cosmos-sdk/x/consensus/keeper"
+	paramskeeper "github.com/cosmos/cosmos-sdk/x/params/keeper"
 )
 
 type AppKeepers struct {

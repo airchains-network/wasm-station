@@ -3,9 +3,9 @@ package simulation
 import (
 	"math/rand"
 
-	sdk "github.com/airchains-network/cosmos-sdk/types"
-	simtypes "github.com/airchains-network/cosmos-sdk/types/simulation"
-	"github.com/airchains-network/cosmos-sdk/x/simulation"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
+	"github.com/cosmos/cosmos-sdk/x/simulation"
 
 	"github.com/airchains-network/station-wasm/app/params"
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/testdata"

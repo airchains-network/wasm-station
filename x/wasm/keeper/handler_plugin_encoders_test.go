@@ -13,12 +13,12 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	codectypes "github.com/airchains-network/cosmos-sdk/codec/types"
-	sdk "github.com/airchains-network/cosmos-sdk/types"
-	banktypes "github.com/airchains-network/cosmos-sdk/x/bank/types"
-	distributiontypes "github.com/airchains-network/cosmos-sdk/x/distribution/types"
-	govv1 "github.com/airchains-network/cosmos-sdk/x/gov/types/v1"
-	stakingtypes "github.com/airchains-network/cosmos-sdk/x/staking/types"
+	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
+	govv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
+	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/wasmtesting"
 	"github.com/airchains-network/station-wasm/x/wasm/types"

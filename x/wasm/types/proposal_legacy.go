@@ -8,10 +8,10 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	sdk "github.com/airchains-network/cosmos-sdk/types"
-	sdkerrors "github.com/airchains-network/cosmos-sdk/types/errors"
-	govtypes "github.com/airchains-network/cosmos-sdk/x/gov/types"
-	"github.com/airchains-network/cosmos-sdk/x/gov/types/v1beta1"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
+	"github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 )
 
 type ProposalType string

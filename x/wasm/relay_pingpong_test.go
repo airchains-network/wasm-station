@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	app2 "github.com/airchains-network/station-wasm/app"
 	wasmibctesting "github.com/airchains-network/station-wasm/x/wasm/ibctesting"

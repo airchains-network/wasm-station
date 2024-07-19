@@ -10,10 +10,10 @@ import (
 	math "math"
 	math_bits "math/bits"
 
-	types "github.com/airchains-network/cosmos-sdk/codec/types"
-	_ "github.com/airchains-network/cosmos-sdk/types/tx/amino"
 	github_com_cometbft_cometbft_libs_bytes "github.com/cometbft/cometbft/libs/bytes"
 	_ "github.com/cosmos/cosmos-proto"
+	types "github.com/cosmos/cosmos-sdk/codec/types"
+	_ "github.com/cosmos/cosmos-sdk/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 )

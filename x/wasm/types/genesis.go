@@ -3,8 +3,8 @@ package types
 import (
 	errorsmod "cosmossdk.io/errors"
 
-	codectypes "github.com/airchains-network/cosmos-sdk/codec/types"
-	sdk "github.com/airchains-network/cosmos-sdk/types"
+	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func (s Sequence) ValidateBasic() error {

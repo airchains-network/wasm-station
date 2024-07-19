@@ -5,7 +5,7 @@ import (
 
 	typwasmvmtypes "github.com/CosmWasm/wasmvm/types"
 
-	"github.com/airchains-network/cosmos-sdk/types"
+	"github.com/cosmos/cosmos-sdk/types"
 )
 
 const (

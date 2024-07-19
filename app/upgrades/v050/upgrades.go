@@ -7,8 +7,8 @@ import (
 	circuittypes "cosmossdk.io/x/circuit/types"
 	upgradetypes "cosmossdk.io/x/upgrade/types"
 
-	"github.com/airchains-network/cosmos-sdk/types/module"
 	"github.com/airchains-network/station-wasm/app/upgrades"
+	"github.com/cosmos/cosmos-sdk/types/module"
 )
 
 // UpgradeName defines the on-chain upgrade name

@@ -6,7 +6,7 @@ import (
 	tmBytes "github.com/cometbft/cometbft/libs/bytes"
 	fuzz "github.com/google/gofuzz"
 
-	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/types"
 )

@@ -1,7 +1,7 @@
 package simulation
 
 import (
-	"github.com/airchains-network/cosmos-sdk/types/module"
+	"github.com/cosmos/cosmos-sdk/types/module"
 
 	"github.com/airchains-network/station-wasm/x/wasm/types"
 )

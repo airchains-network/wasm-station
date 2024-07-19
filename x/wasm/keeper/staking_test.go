@@ -11,14 +11,14 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	codectypes "github.com/airchains-network/cosmos-sdk/codec/types"
-	"github.com/airchains-network/cosmos-sdk/crypto/keys/secp256k1"
-	sdk "github.com/airchains-network/cosmos-sdk/types"
-	authkeeper "github.com/airchains-network/cosmos-sdk/x/auth/keeper"
-	bankkeeper "github.com/airchains-network/cosmos-sdk/x/bank/keeper"
-	distributionkeeper "github.com/airchains-network/cosmos-sdk/x/distribution/keeper"
-	stakingkeeper "github.com/airchains-network/cosmos-sdk/x/staking/keeper"
-	stakingtypes "github.com/airchains-network/cosmos-sdk/x/staking/types"
+	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
+	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
+	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
+	distributionkeeper "github.com/cosmos/cosmos-sdk/x/distribution/keeper"
+	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
+	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/testdata"
 	wasmtypes "github.com/airchains-network/station-wasm/x/wasm/types"

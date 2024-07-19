@@ -1,7 +1,7 @@
 package wasmtesting
 
 import (
-	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 type MockCoinTransferrer struct {

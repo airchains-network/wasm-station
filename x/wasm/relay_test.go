@@ -18,7 +18,7 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/airchains-network/station-wasm/app"
 	wasmibctesting "github.com/airchains-network/station-wasm/x/wasm/ibctesting"

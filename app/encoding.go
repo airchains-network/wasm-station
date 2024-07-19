@@ -7,7 +7,7 @@ import (
 
 	"cosmossdk.io/log"
 
-	simtestutil "github.com/airchains-network/cosmos-sdk/testutil/sims"
+	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
 
 	"github.com/airchains-network/station-wasm/app/params"
 	wasmkeeper "github.com/airchains-network/station-wasm/x/wasm/keeper"

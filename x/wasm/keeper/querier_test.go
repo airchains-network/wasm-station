@@ -20,10 +20,10 @@ import (
 	"cosmossdk.io/log"
 	storetypes "cosmossdk.io/store/types"
 
-	sdk "github.com/airchains-network/cosmos-sdk/types"
-	sdkErrors "github.com/airchains-network/cosmos-sdk/types/errors"
-	"github.com/airchains-network/cosmos-sdk/types/query"
-	govv1beta1 "github.com/airchains-network/cosmos-sdk/x/gov/types/v1beta1"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdkErrors "github.com/cosmos/cosmos-sdk/types/errors"
+	"github.com/cosmos/cosmos-sdk/types/query"
+	govv1beta1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/wasmtesting"
 	"github.com/airchains-network/station-wasm/x/wasm/types"

@@ -10,7 +10,7 @@ import (
 	"cosmossdk.io/collections"
 	corestoretypes "cosmossdk.io/core/store"
 
-	"github.com/airchains-network/cosmos-sdk/codec"
+	"github.com/cosmos/cosmos-sdk/codec"
 
 	"github.com/airchains-network/station-wasm/x/wasm/types"
 )

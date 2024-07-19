@@ -3,7 +3,7 @@ package types
 import (
 	"context"
 
-	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 // private type creates an interface key for Context that cannot be accessed by any other package

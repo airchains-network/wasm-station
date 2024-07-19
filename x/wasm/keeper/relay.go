@@ -9,8 +9,8 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	"github.com/airchains-network/cosmos-sdk/telemetry"
-	sdk "github.com/airchains-network/cosmos-sdk/types"
+	"github.com/cosmos/cosmos-sdk/telemetry"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/types"
 )
@@ -52,7 +52,7 @@ func (k Keeper) OnOpenChannel(
 // In the IBC protocol this is either the `Channel Open Ack` event on the initiating chain or
 // `Channel Open Confirm` on the counterparty chain.
 //
-// There is an open issue with the [cosmos-sdk](https://github.com/airchains-network/cosmos-sdk/issues/8334)
+// There is an open issue with the [cosmos-sdk](https://github.com/cosmos/cosmos-sdk/issues/8334)
 // that the counterparty channelID is empty on the initiating chain
 // See https://github.com/cosmos/ics/tree/master/spec/ics-004-channel-and-packet-semantics#channel-lifecycle-management
 func (k Keeper) OnConnectChannel(

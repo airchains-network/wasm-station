@@ -9,13 +9,13 @@ import (
 
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/airchains-network/cosmos-sdk/runtime"
-	"github.com/airchains-network/cosmos-sdk/testutil"
-	sdk "github.com/airchains-network/cosmos-sdk/types"
-	"github.com/airchains-network/cosmos-sdk/types/address"
-	moduletestutil "github.com/airchains-network/cosmos-sdk/types/module/testutil"
-	paramskeeper "github.com/airchains-network/cosmos-sdk/x/params/keeper"
-	paramstypes "github.com/airchains-network/cosmos-sdk/x/params/types"
+	"github.com/cosmos/cosmos-sdk/runtime"
+	"github.com/cosmos/cosmos-sdk/testutil"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/cosmos-sdk/types/address"
+	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
+	paramskeeper "github.com/cosmos/cosmos-sdk/x/params/keeper"
+	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm"
 	v2 "github.com/airchains-network/station-wasm/x/wasm/migrations/v2"

@@ -3,7 +3,7 @@ package v1
 import (
 	"context"
 
-	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/types"
 )

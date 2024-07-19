@@ -12,7 +12,7 @@ import (
 
 	storetypes "cosmossdk.io/store/types"
 
-	sdk "github.com/airchains-network/cosmos-sdk/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/airchains-network/station-wasm/x/wasm/keeper/wasmtesting"
 	"github.com/airchains-network/station-wasm/x/wasm/types"

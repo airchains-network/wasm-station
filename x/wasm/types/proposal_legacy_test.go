@@ -13,8 +13,8 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/airchains-network/cosmos-sdk/types"
-	"github.com/airchains-network/cosmos-sdk/x/gov/types/v1beta1"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 )
 
 func TestValidateProposalCommons(t *testing.T) {

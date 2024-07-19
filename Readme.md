@@ -29,7 +29,10 @@ The project requires:
     /bin/bash ./scripts/local-start.sh 
 ```
 
-
+- for testing: transaction bomber
+```shell 
+    /bin/bash ./scripts/bomber.sh
+```
 
 ## Contributing
 Contributions are greatly appreciated. You can make contributions by creating issues, fixing bugs, or suggesting new features. Feel free to fork this repository and create pull requests to affect changes.

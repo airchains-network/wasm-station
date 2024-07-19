@@ -4,9 +4,8 @@ go 1.21
 
 require (
 	github.com/CosmWasm/wasmvm v1.5.2
-	github.com/airchains-network/cosmos-sdk v0.0.2-0.20240718123146-95fd66e98409
 	github.com/cosmos/cosmos-proto v1.0.0-beta.3
-	//github.com/airchains-network/cosmos-sdk v0.50.3
+	github.com/cosmos/cosmos-sdk v0.50.3
 	github.com/cosmos/gogogateway v1.2.0 // indirect
 	github.com/cosmos/gogoproto v1.4.11
 	github.com/cosmos/iavl v1.0.0
@@ -85,7 +84,6 @@ require (
 	github.com/cockroachdb/tokenbucket v0.0.0-20230807174530-cc333fc44b06 // indirect
 	github.com/cometbft/cometbft-db v0.9.1 // indirect
 	github.com/cosmos/btcutil v1.0.5 // indirect
-	github.com/cosmos/cosmos-sdk v0.50.3 // indirect
 	github.com/cosmos/go-bip39 v1.0.0 // indirect
 	github.com/cosmos/ledger-cosmos-go v0.13.3 // indirect
 	github.com/creachadair/atomicfile v0.3.1 // indirect
@@ -209,8 +207,8 @@ require (
 
 replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.2.0
-	//github.com/cometbft/cometbft => github.com/airchains-network/wasmbft v0.0.0-20240718110141-af54a17b5fb1
-	//github.com/cosmos/cosmos-sdk => github.com/airchains-network/cosmos-sdk v0.0.2-0.20240718123146-95fd66e98409
+	github.com/cometbft/cometbft => github.com/airchains-network/wasmbft v0.0.1-alpha
+	github.com/cosmos/cosmos-sdk => github.com/airchains-network/cosmos-sdk v0.0.1-alpha
 	github.com/gin-gonic/gin => github.com/gin-gonic/gin v1.8.1
 	github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 )
